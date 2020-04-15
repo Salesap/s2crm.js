@@ -1,2 +1,35 @@
-# s2crm.js
-Simple JS library for interacting with CRM. Can be used in iframe too.
+# S2CRM.js
+Простая браузерная JS библиотека для взаимодействия с интерфейсом S2 из Iframe.
+
+## Инициализация
+
+```javascript
+  var s2 = new S2CRM('hash');
+```
+
+`hash` - это случайная строка, которую мы посылаем в query когда открываем iframe.
+
+> [Как извлечь данные из query string на JavaScript](https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript).
+
+
+## Возможности
+
+#### Уведомления
+Вы можете отправлять сообщения пользователю через уведомления. Уведомления всплывают в нижней правой части интерфейса S2.
+
+_Обычное уведомление_
+```javascript
+  s2.notification('Обычное уведомление');
+```
+
+_Сообщение об ошибке_
+```javascript
+  s2.notification('Ошибка! Неправильный пароль.', 'error');
+```
+
+#### Закрытие модального окна
+Чтобы закрыть модальное окно с ифреймом вызовите
+
+```javascript
+  s2.closeModal();
+```
